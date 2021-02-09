@@ -1,3 +1,6 @@
+FROM docker.io/project31/aarch64-alpine-qemu:3.5
+RUN [ “cross-build-start” ]
+
 FROM arm64v8/erlang:22.3.2-alpine as builder
 
 RUN apk add --no-cache --update \
@@ -38,3 +41,5 @@ COPY --from=builder /opt/docker /opt/miner
 
 ENTRYPOINT ["/opt/miner/bin/miner"]
 CMD ["foreground"]
+
+RUN [ “cross-build-end” ]
