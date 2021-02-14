@@ -43,12 +43,12 @@
 -include_lib("blockchain/include/blockchain_vars.hrl").
 
 -define(SERVER, ?MODULE).
--define(MINING_TIMEOUT, 30).
--define(CHALLENGE_RETRY, 3).
--define(RECEIVING_TIMEOUT, 10).
--define(RECEIPTS_TIMEOUT, 10).
+-define(MINING_TIMEOUT, 40).
+-define(CHALLENGE_RETRY, 4).
+-define(RECEIVING_TIMEOUT, 20).
+-define(RECEIPTS_TIMEOUT, 20).
 -define(STATE_FILE, "miner_poc_statem.state").
--define(POC_RESTARTS, 3).
+-define(POC_RESTARTS, 4).
 
 -ifdef(TEST).
 -define(BLOCK_PROPOGATION_TIME, timer:seconds(1)).
